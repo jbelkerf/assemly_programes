@@ -22,7 +22,7 @@ mov rdx, 100
 mov rax, 0
 syscall
 
-#giving the read syscall its argument
+#giving the write syscall its argument
 mov rdi, 1
 mov rsi, rsp
 mov rdx, rax
