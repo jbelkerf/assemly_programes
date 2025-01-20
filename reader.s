@@ -1,7 +1,7 @@
 .intel_syntax noprefix
 
 #setting the path of the file we want to open on the stack
-mov BYTE PTR [rsp], '.'
+mov BYTE PTR [rsp + 0], '.'
 mov BYTE PTR [rsp + 1], '/'
 mov BYTE PTR [rsp + 2], 'f'
 mov BYTE PTR [rsp + 3], 'i'
@@ -25,11 +25,11 @@ syscall
 #giving the write syscall its argument
 mov rdi, 1
 mov rsi, rsp
-mov rdx, rax
+mov rdx, rax 
 mov rax, 1
 syscall
 
-#exit the program 
-mov rax, 60
+#exit with 42 value
 mov rdi, 42
+mov rax, 60
 syscall

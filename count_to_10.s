@@ -1,7 +1,4 @@
 .intel_syntax noprefix
-.global _start
-
-_start:
 mov r8, 0
 LOOP_HEADER:
 mov BYTE PTR [rsp], '0'
