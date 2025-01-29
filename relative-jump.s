@@ -1,7 +1,10 @@
 .intel_syntax noprefix
-jmp 0x51
-.rept
-mov rax, 1
+.global _start
+
+_start:
+	jmp skip_rept
+.rept 0x51
+	nop
 .endr
-nop
-nop
+skip_rept:
+	mov rax, 1
